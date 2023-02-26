@@ -19,9 +19,7 @@ const newItem = () => {
     const newItem = {
       id: v4(),
       item: item,
-      color: randomColor({
-        luminosity: 'light'
-      }),
+      color: randomColor(),
       defaultPos: {
         x: 500,
         y: -500
@@ -30,7 +28,7 @@ const newItem = () => {
     setItems((items) => [...items, newItem]);
     setItem('')
   } else {
-    alert('Enter something...')
+    alert('Enter your task...')
     setItem('')
   }
 }
@@ -64,7 +62,7 @@ const keyPress = (e) => {
         placeholder='Enter something'
         onChange={(e) => setItem(e.target.value)} 
         onKeyPress={(e) => keyPress(e)}/>
-        <button className='enter' onClick={newItem}>Enter</button>
+        <button className='enter' onClick={newItem}>To Do</button>
         </div> 
 
         {
